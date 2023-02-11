@@ -224,7 +224,7 @@ input, select, textarea {
 		line-height: 1.5em;
 	}
 
-	@media screen and (max-width: 736px) {
+	@media screen and (max-width: 822px) {
 
 		h2 {
 			font-size: 1.25em;
@@ -1319,7 +1319,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 822px) {
 
 			.row {
 				display: flex;
@@ -2611,7 +2611,7 @@ input, select, textarea {
 				font-size: 2.75rem;
 			}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 822px) {
 
 			ul.icons.major li {
 				padding: 0 1.25em 0 0;
@@ -2640,7 +2640,7 @@ input, select, textarea {
 				color: #999999;
 			}
 
-	@media screen and (max-width: 736px) and (orientation: portrait) {
+	@media screen and (max-width: 822px) and (orientation: portrait) {
 
 		ul.icons.labeled {
 			text-align: left;
@@ -2686,7 +2686,7 @@ input, select, textarea {
 		margin: 0 0 1.5em 0;
 	}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 822px) {
 
 			header p br {
 				display: none;
@@ -2727,7 +2727,7 @@ input, select, textarea {
 			margin: 2em auto 0 auto;
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 822px) {
 
 			header.major {
 				margin: 0 0 2em 0;
@@ -2789,7 +2789,7 @@ input, select, textarea {
 				text-align: right;
 			}
 
-	@media screen and (max-width: 736px) and (orientation: landscape) {
+	@media screen and (max-width: 822px) and (orientation: landscape) {
 
 		.spotlight .image {
 			margin: 0 2em 0 0;
@@ -2801,7 +2801,7 @@ input, select, textarea {
 
 	}
 
-	@media screen and (max-width: 736px) and (orientation: portrait) {
+	@media screen and (max-width: 822px) and (orientation: portrait) {
 
 		.spotlight {
 			-moz-flex-direction: column !important;
@@ -3576,7 +3576,7 @@ input, select, textarea {
 
 		}
 
-	@media screen and (max-width: 736px) and (orientation: landscape) {
+	@media screen and (max-width: 822px) and (orientation: landscape) {
 
 		.wrapper {
 			padding: 3em 3em 1em 3em ;
@@ -3584,7 +3584,7 @@ input, select, textarea {
 
 	}
 
-	@media screen and (max-width: 736px) and (orientation: portrait) {
+	@media screen and (max-width: 822px) and (orientation: portrait) {
 
 		.wrapper {
 			padding: 3em 1.5em 1em 1.5em ;
@@ -3939,7 +3939,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 822px) {
 
 			#header {
 				background-image: url("images/overlay.png"), url("images/pattern-size3.svg");
@@ -3956,7 +3956,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 736px) and (orientation: landscape) {
+		@media screen and (max-width: 822px) and (orientation: landscape) {
 
 			#header {
 				padding: 2em 2em 0.1em 2em ;
@@ -3978,7 +3978,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 736px) and (orientation: portrait) {
+		@media screen and (max-width: 822px) and (orientation: portrait) {
 
 			#header {
 				padding: 3em 1.5em 1em 1.5em ;
@@ -4064,7 +4064,7 @@ input, select, textarea {
 		padding: 4em 0 2em 0 ;
 	}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 822px) {
 
 			#main {
 				padding: 3em 0 1em 0 ;
@@ -4132,7 +4132,7 @@ input, select, textarea {
 
 		}
 
-	@media screen and (max-width: 736px) and (orientation: landscape) {
+	@media screen and (max-width: 822px) and (orientation: landscape) {
 
 		#footer {
 			padding: 3em 3em 1em 3em ;
@@ -4140,7 +4140,7 @@ input, select, textarea {
 
 	}
 
-	@media screen and (max-width: 736px) and (orientation: portrait) {
+	@media screen and (max-width: 822px) and (orientation: portrait) {
 
 		#footer {
 			padding: 3em 1.5em 1em 1.5em ;
