@@ -16,6 +16,200 @@
     <noscript>
       <link rel="stylesheet" href="assets/css/noscript.css" />
     </noscript>
+
+
+    <script>
+      function openModal() {
+        document.getElementById("myModal").style.display = "block";
+      }
+      
+      function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+      }
+      
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+      }
+      </script>
+
+<style>
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+.columnBig {
+  float: left;
+  width: 100%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top:  150px;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 60px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.prev {
+  left: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+</style>
+
+
   </head>
   <body class="is-preload">
     <!-- Header -->
@@ -356,9 +550,223 @@
             </p>
           </div>
         </section>
+        <center>
+          <h3><b>Wyszukiwarka przepisów - PHP (framework YII)</b></h3>
+        </center>
+        <section class="spotlight">
+          <div>
+            <center>
+              <img
+                style="max-width: 100%; width: 500px;"
+                src="images/wte/Home.png"
+                alt=""
+              />
+              <img
+                style="max-width: 100%; width: 500px;"
+                src="images/wte/Role2.png"
+                alt=""
+              />
+            </center>
+          </div>
+          <div class="content">
+            <p style="text-align: justify; text-justify: inter-word;">
+              <b>Wyszukiwarka przepisów</b>
+              napisana w <b>PHP</b> z wykorzystaniem frameworka YII, baza danych <b>SQL</b>. 
+              Jest to serwis z podziałem na role (administrator, moderator, użytkownik).
+              Aplikacja umożliwia dodawanie przepisów które muszą być zatwierdzone przez moderatora.
+              Każdy niezalogowany użytkownik widzi publiczne przepisy i ma możliwość wyszukania po produktach.
+              Każdy produkt przypisany jest do konkretnej grupy produktów. Produkty, grupy, sprzęty AGD, czas przygotowania i wszystkie inne funkcjonalności są zarządzane przez administratora.
+
+           
+            </p>
+          </div>
+        </section>
+        <section class="spotlight">
+        <center>
+          <div class="row">
+            <div class="columnBig">
+              <img src="images/wte/Gallery.png" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+            </div>
+          </div>
+      
+          
+          <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+          
+              <div class="mySlides">
+                <div class="numbertext">1 / 17</div>
+                <img src="images/wte/Home.png" style="width:100%">
+              </div>
+          
+              <div class="mySlides">
+                <div class="numbertext">2 / 17</div>
+                <img src="images/wte/Twoje przepisy1.png" style="width:100%">
+              </div>
+             
+              <div class="mySlides">
+                <div class="numbertext">3 / 17</div>
+                <img src="images/wte/Twoje przepisy2.png" style="width:100%">
+              </div>
+              
+              <div class="mySlides">
+                <div class="numbertext">4 / 17</div>
+                <img src="images/wte/Twoje przepisy3.png" style="width:100%">
+              </div>
+
+              <div class="mySlides">
+                <div class="numbertext">5 / 17</div>
+                <img src="images/wte/AGD1.png" style="width:100%">
+              </div>
+          
+              <div class="mySlides">
+                <div class="numbertext">6 / 17</div>
+                <img src="images/wte/Poziom.png" style="width:100%">
+              </div>
+             
+              <div class="mySlides">
+                <div class="numbertext">7 / 17</div>
+                <img src="images/wte/Produkty1.png" style="width:100%">
+              </div>
+              
+              <div class="mySlides">
+                <div class="numbertext">8 / 17</div>
+                <img src="images/wte/Produkty2.png" style="width:100%">
+              </div>
+
+              <div class="mySlides">
+                <div class="numbertext">9 / 17</div>
+                <img src="images/wte/Produkty3.png" style="width:100%">
+              </div>
+          
+              <div class="mySlides">
+                <div class="numbertext">10 / 17</div>
+                <img src="images/wte/Przepisy moderator2.png" style="width:100%">
+              </div>
+             
+              <div class="mySlides">
+                <div class="numbertext">11 / 17</div>
+                <img src="images/wte/Przepisy moderator3.png" style="width:100%">
+              </div>
+              
+              <div class="mySlides">
+                <div class="numbertext">12 / 17</div>
+                <img src="images/wte/Przepisy1.png" style="width:100%">
+              </div>
+
+              <div class="mySlides">
+                <div class="numbertext">13 / 17</div>
+                <img src="images/wte/Przepisy2.png" style="width:100%">
+              </div>
+          
+              <div class="mySlides">
+                <div class="numbertext">14 / 17</div>
+                <img src="images/wte/Przepisy3.png" style="width:100%">
+              </div>
+             
+              <div class="mySlides">
+                <div class="numbertext">15 / 17</div>
+                <img src="images/wte/Rodzaj.png" style="width:100%">
+              </div>
+              
+              <div class="mySlides">
+                <div class="numbertext">16 / 17</div>
+                <img src="images/wte/Role.png" style="width:100%">
+              </div>
+
+              <div class="mySlides">
+                <div class="numbertext">17 / 17</div>
+                <img src="images/wte/Zarządzanie.png" style="width:100%">
+              </div>
+              
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          
+              <div class="caption-container">
+                <p id="caption"></p>
+              </div>
+          
+          
+              <div class="column">
+                <img class="demo cursor" src="images/wte/Home.png" style="width:100%" onclick="currentSlide(1)" alt="
+                Strona główna zawiera polecane przepisy i polecanego autora dnia">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="images/wte/Twoje przepisy1.png" style="width:100%" onclick="currentSlide(2)" alt="
+                Wyszukiwarka przepisów na podstawie produktów
+                ">
+              </div>
+              
+              <div class="column">
+                <img class="demo cursor" src="images/wte/Twoje przepisy2.png" style="width:100%" onclick="currentSlide(3)" alt="Strona z widokiem użytkownika zalogowanego, są to zaakceptowane przez moderatora dodane przepisy">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="images/wte/Twoje przepisy3.png" style="width:100%" onclick="currentSlide(4)" alt="Strona z odrzuconymi i niesprawdzonymi przez moderatora przepisami">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="images/wte/AGD1.png" style="width:100%" onclick="currentSlide(5)" alt="
+                Lista sprzętów AGD używanych w przepisach. Można obejrzeć, edytować i usuwać
+                ">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="images/wte/Poziom.png" style="width:100%" onclick="currentSlide(6)" alt="
+                Poziomy trudności z pełnym CRUDem
+                ">
+              </div>
+              
+              <div class="column">
+                <img class="demo cursor" src="images/wte/Produkty1.png" style="width:100%" onclick="currentSlide(7)" alt="Lista produktów z przypisanym rodzajem produktu">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="images/wte/Produkty2.png" style="width:100%" onclick="currentSlide(8)" alt="Widok podglądu jednego z produktów, można usunąć i edytować">
+              </div>
+
+
+              <div class="column">
+                <img class="demo cursor" src="images/wte/Produkty3.png" style="width:100%" onclick="currentSlide(9)" alt="
+                Podczas dodawania produktu należy wybrać jego rodzaj
+                ">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="images/wte/Przepisy moderator2.png" style="width:100%" onclick="currentSlide(10)" alt="
+                Widok moderatora która może filtrować statusy, N - oznacza niesprawdzony przepis.
+                ">
+              </div>
+              
+              <div class="column">
+                <img class="demo cursor" src="images/wte/Przepisy moderator3.png" style="width:100%" onclick="currentSlide(11)" alt="Moderator może odrzucić przepis, zaakceptować, aktualizować lub usunąć">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="images/wte/Przepisy1.png" style="width:100%" onclick="currentSlide(12)" alt="Strona dodawania przepisu z walidacją">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="images/wte/Przepisy2.png" style="width:100%" onclick="currentSlide(13)" alt="
+                Wszystkie dropdowny pobierają dane z bazy danych
+                ">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="images/wte/Przepisy3.png" style="width:100%" onclick="currentSlide(14)" alt="
+                multiselect do wyboru produktów
+                ">
+              </div>
+              
+              <div class="column">
+                <img class="demo cursor" src="images/wte/Rodzaj.png" style="width:100%" onclick="currentSlide(15)" alt="Widok rodzaji produków z pełnym CRUDem">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="images/wte/Role.png" style="width:100%" onclick="currentSlide(16)" alt="Role użytkowników">
+              </div>
+              <div class="column">
+                <img class="demo cursor" src="images/wte/Zarządzanie.png" style="width:100%" onclick="currentSlide(17)" alt="
+                Dodatkowe funkcje dla administratora">
+              </div
+            </div>
+          </div>
+        </center>
+      </section>
       </div>
     </section>
-
+   
 	<section id="artistic" class="wrapper">
 		<center>
 		  <h2><b>Praca artystyczna</b></h2>
