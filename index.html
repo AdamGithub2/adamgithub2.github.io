@@ -1,858 +1,1653 @@
-<!DOCTYPE html>
-<!--
-	Fractal by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<!doctype html>
+<html lang="pl">
   <head>
-    <title>Adam Misiura - portfolio</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript>
-      <link rel="stylesheet" href="assets/css/noscript.css" />
-    </noscript>
+    <title>
+      Adam Misiura — Senior Web &amp; Mobile Fullstack Developer (Portfolio)
+    </title>
+    <meta
+      name="description"
+      content="Portfolio Adama Misiury — Senior Web & Mobile Fullstack Developer (React, React Native, TypeScript, NestJS), twórca Plantiano.pl, gier przeglądarkowych i muzyki."
+    />
 
+    <!-- Google Fonts: Pixel & Monospace Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&family=Press+Start+2P&family=VT323&display=swap"
+      rel="stylesheet"
+    />
 
-    <script>
-      function openModal() {
-        document.getElementById("myModal").style.display = "block";
-      }
-      
-      function closeModal() {
-        document.getElementById("myModal").style.display = "none";
-      }
-      
-      var slideIndex = 1;
-      showSlides(slideIndex);
-      
-      function plusSlides(n) {
-        showSlides(slideIndex += n);
-      }
-      
-      function currentSlide(n) {
-        showSlides(slideIndex = n);
-      }
-      
-      function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("demo");
-        var captionText = document.getElementById("caption");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
-        captionText.innerHTML = dots[slideIndex-1].alt;
-      }
-      </script>
-
-<style>
-body {
-  font-family: Verdana, sans-serif;
-  margin: 0;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.row > .column {
-  padding: 0 8px;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.column {
-  float: left;
-  width: 25%;
-}
-
-.columnBig {
-  float: left;
-  width: 100%;
-}
-
-/* The Modal (background) */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: black;
-}
-
-/* Modal Content */
-.modal-content {
-  position: relative;
-  background-color: #fefefe;
-  margin: auto;
-  padding: 0;
-  width: 90%;
-  max-width: 1200px;
-}
-
-/* The Close Button */
-.close {
-  color: white;
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  font-size: 35px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #999;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.mySlides {
-  display: none;
-}
-
-.cursor {
-  cursor: pointer;
-}
-
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top:  150px;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: rgb(0, 0, 0);
-  font-weight: bold;
-  font-size: 60px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-/* Position the "next button" to the right */
-.prev {
-  left: 0;
-  border-radius: 0 3px 3px 0;
-}
-
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-img {
-  margin-bottom: -4px;
-}
-
-.caption-container {
-  text-align: center;
-  background-color: black;
-  padding: 2px 16px;
-  color: white;
-}
-
-.demo {
-  opacity: 0.6;
-}
-
-.active,
-.demo:hover {
-  opacity: 1;
-}
-
-img.hover-shadow {
-  transition: 0.3s;
-}
-
-.hover-shadow:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-</style>
-
-
+    <!-- Local FontAwesome Icons & Custom Pixel-Art Theme -->
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="assets/css/pixel.css" />
   </head>
-  <body class="is-preload">
-    <!-- Header -->
-    <header id="header">
-      <div class="content">
-        <h1><a href="#">Adam Misiura</a></h1>
-        <p>Programista aplikacji mobilnych Android/IOS w React Native</p>
-        <ul class="actions">
-          <li>
-            <a
-              href="#aboutme"
-              class="button icon solid fa-chevron-down scrolly"
-            >
-              O mnie
-            </a>
-          </li>
-          <li>
-            <a
-              href="#academic"
-              class="button icon solid fa-chevron-down scrolly"
-            >
-              Praca naukowa
-            </a>
-          </li>
-          <li>
-            <a href="#work" class="button icon solid fa-chevron-down scrolly">
-              Praca zawodowa
-            </a>
-          </li>
-        </ul>
-        <ul class="actions">
-          <li>
-            <a
-              href="#projects"
-              class="button icon solid fa-chevron-down scrolly"
-            >
-              Autorskie projekty
-            </a>
-          </li>
-          <li>
-            <a
-              href="#artistic"
-              class="button icon solid fa-chevron-down scrolly"
-            >
-              Praca artysyczna
-            </a>
-          </li>
-        </ul>
-        </ul>
-      </div>
-      <div class="image phone">
-        <div class="inner"><img src="images/f11.jpg" alt="" /></div>
+
+  <body>
+    <!-- Animated Retro Pixel Starfield Background -->
+    <canvas id="starfield-canvas" aria-hidden="true"></canvas>
+
+    <!-- =====================================================================
+         STICKY RETRO RPG HUD NAVIGATION BAR
+         ===================================================================== -->
+    <header class="hud-header">
+      <div class="hud-container">
+        <div class="hud-player-info">
+          <a href="#top" class="hud-brand">
+            <i class="fas fa-gamepad"></i>
+            <span>[P1] ADAM.MISIURA</span>
+          </a>
+          <div class="hud-bars">
+            <div class="stat-pill" title="12+ Lat doświadczenia w IT">
+              <span style="color: var(--accent-amber)">LVL.12+</span>
+            </div>
+            <div class="stat-pill">
+              <span style="color: var(--accent-magenta)">HP</span>
+              <div class="bar-track"><div class="bar-fill-hp"></div></div>
+            </div>
+            <div class="stat-pill">
+              <span style="color: var(--accent-cyan)">EXP</span>
+              <div class="bar-track"><div class="bar-fill-xp"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="hud-nav" aria-label="Główna nawigacja">
+          <a href="#aboutme">01.O mnie</a>
+          <a href="#projects">02.Projekty &amp; Gry</a>
+          <a href="#work">03.Kariera</a>
+          <a href="#academic">04.Nauka</a>
+          <a href="#artistic">05.Muzyka</a>
+          <a href="#arcade">06.Mini-Gra</a>
+        </nav>
+
+        <div class="hud-controls">
+          <button
+            type="button"
+            id="toggle-sfx"
+            class="pixel-btn-sm"
+            title="Włącz/wyłącz dźwięki 8-bit"
+          >
+            <i class="fas fa-volume-mute"></i> SFX: OFF
+          </button>
+          <button
+            type="button"
+            id="toggle-crt"
+            class="pixel-btn-sm"
+            title="Włącz/wyłącz linie CRT monitora"
+          >
+            <i class="fas fa-tv"></i> CRT: OFF
+          </button>
+        </div>
       </div>
     </header>
 
-    <!-- One -->
+    <main id="top" class="main-wrapper">
+      <!-- ===================================================================
+           HERO BANNER: CHARACTER SELECT & PIXEL STUDIO
+           =================================================================== -->
+      <section class="hero-banner pixel-box">
+        <div
+          class="hero-bg-layer pixel-img"
+          style="background-image: url(&quot;images/pixel/hero_bg.jpg&quot;)"
+        ></div>
+        <div class="hero-bg-gradient"></div>
 
-    <section id="aboutme" class="wrapper">
-      <center>
-        <h2><b>O mnie</b></h2>
-      </center>
-      <hr />
-      <div class="inner alt">
-        <section class="spotlight">
-          <div class="image"><img src="images/f12.jpg" alt="" /></div>
-          <div class="content">
-            <p style="text-align: justify; text-justify: inter-word;">
-              Od 15 lat działam w dziedzinie IT, na początku były to proste
-              strony napisane w html i css w notatniku. Później na studiach
-              poznałem języki programowania takie jak C, C++, Java, Python. Po
-              studiach znalazłem zatrudnienie w Sulimo Software, było to
-              stanowisko fullstack, gdzie rozwijałem projekt w PHP na frameworku
-              YII. Później w tej samej firmie przeszedłem na stanowisko
-              tworzenia interaktywnych dokumentów. W międzyczasie zatrudniłem
-              się na uczelni gdzie prowadziłem wiele różnych zajęć z dziedziny
-              informatyki i matematyki. Prywatnie pisałem aplikacje w
-              android/kotlin dla własnego użytku. Następnie zrobiłem kurs react
-              native i podjąłem pracę jako programista aplikacji mobilnych w
-              react native i przez niecałe 2 lata rozwijałem aplikację
-              napotykając się na wiele problemów i skutecznie je rozwiązując.
-              Aktualnie prywatnie tworzę aplikację, która będzie bazą do
-              stworzenia wszystkich pomysłów moich i moich znajomych.
+        <div class="hero-grid">
+          <div class="hero-left">
+            <span class="hero-badge">
+              <i class="fas fa-bolt"></i> SENIOR WEB &amp; MOBILE FULLSTACK
+              DEVELOPER
+            </span>
+            <h1 class="hero-name">Adam Misiura</h1>
+            <p class="hero-class">
+              &gt; React • React Native • TypeScript • NestJS_
             </p>
-          </div>
-        </section>
-      </div>
-    </section>
 
-    <!-- Two -->
-    <section id="academic" class="wrapper">
-      <center>
-        <h2><b>Praca naukowa</b></h2>
-      </center>
-      <hr />
-      <div class="inner alt">
-        <div class="content">
-          <h3>ARTYKUŁY</h3>
-          <p style="text-align: justify; text-justify: inter-word;">
-            <b>On the mutation model used in the fingerprinting DNA</b>
-            - Andrzej Krajka, Ireneusz Panasiuk, Adam Misiura, Grzegorz M.
-            Wójcik
-            <br />
-            <a
-              href="https://www.degruyter.com/document/doi/10.1515/bams-2020-0057/html"
+            <!-- Interactive RPG Dialogue Box -->
+            <div class="rpg-dialogue">
+              <span class="rpg-speaker">SYSTEM LOG // ADAM</span>
+              <div class="typewriter-text">
+                <span id="typewriter-box"></span
+                ><span class="cursor-blink"></span>
+              </div>
+              <div style="margin-top: 0.65rem; text-align: right">
+                <button
+                  type="button"
+                  id="next-dialogue-btn"
+                  class="pixel-btn-sm"
+                >
+                  DALEJ [ENTER] <i class="fas fa-caret-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <a
+                href="https://plantiano.pl/"
+                target="_blank"
+                rel="noopener"
+                class="pixel-btn pixel-btn-primary"
+              >
+                <i class="fas fa-seedling"></i> PLANTIANO.PL
+              </a>
+              <a href="#projects" class="pixel-btn">
+                <i class="fas fa-gamepad"></i> PROJEKTY &amp; GRY
+              </a>
+              <a href="#work" class="pixel-btn">
+                <i class="fas fa-briefcase"></i> DOŚWIADCZENIE
+              </a>
+              <a href="#artistic" class="pixel-btn">
+                <i class="fab fa-spotify"></i> MUZYKA &amp; SPOTIFY
+              </a>
+              <a
+                href="https://www.linkedin.com/in/adam-misiura/"
+                target="_blank"
+                rel="noopener"
+                class="pixel-btn"
+              >
+                <i class="fab fa-linkedin"></i> LINKEDIN
+              </a>
+            </div>
+          </div>
+
+          <!-- Character Sheet Card -->
+          <div class="hero-avatar-card">
+            <div class="avatar-frame-wrap">
+              <img
+                src="images/pixel/avatar_guitar.jpg"
+                alt="Adam Misiura - Pixel Art Portrait"
+                class="avatar-photo"
+                data-lightbox-src="images/pixel/avatar_guitar.jpg"
+                data-lightbox-caption="Adam Misiura — 16-Bit Pixel Art Character Portrait"
+                style="cursor: pointer"
+              />
+            </div>
+            <div
+              style="
+                font-family: var(--font-pixel);
+                font-size: 0.62rem;
+                color: var(--accent-amber);
+                margin-bottom: 0.4rem;
+              "
             >
-              Link do artykułu
-            </a>
-          </p>
-          <p style="text-align: justify; text-justify: inter-word;">
-            <b>
-              Simulation of the south-eastern Polish subpopulations behaviour
-            </b>
-            - Tomasz Krajka, Adam Misiura, Grzegorz M. Wójcik
-            <br />
-            <a href="https://ieeexplore.ieee.org/document/9277707">
-              Link do artykułu
-            </a>
-          </p>
-        </div>
+              KLASA: FULLSTACK ARCHITECT &amp; BARD
+            </div>
 
-        <div class="content">
-          <h3>PROWADZONE ZAJĘCIA</h3>
-          <ul>
-            <li style="text-align: justify; text-justify: inter-word;">
-              <b>Podstawy programowania w C</b>
-              dla studentów I roku I stopnia
-            </li>
-            <li style="text-align: justify; text-justify: inter-word;"> 
-              <b>Programowanie obiektowe w C++</b>
-              dla studentów I roku II stopnia
-            </li>
-            <li style="text-align: justify; text-justify: inter-word;">
-              <b>Algorytmika</b>
-              - implementacja klasycznych algorytmów (sortowania, problem
-              komiwojarzera, problem listonosza, sieci przepływowe, algorytm
-              genetyczny, automaty komórkowe, maszyna turinga, drzewa splay,
-              reprezentacja grafu, kolorowanie grafu, cykle Hamiltona i Eulera)
-              - dla studentów I roku II stopnia
-            </li>
-            <li style="text-align: justify; text-justify: inter-word;">
-              <b>Systemy zarządzania wersją - GIT i Mercurial</b>
-              dla studentów I roku I stopnia
-            </li>
-            <li style="text-align: justify; text-justify: inter-word;">
-              <b>Matematyka dyskretna</b>
-              dla studentów I roku I stopnia
-            </li>
-            <li style="text-align: justify; text-justify: inter-word;">
-              <b>Wstęp do teorii obliczalności</b>
-              dla studentów II roku I stopnia
-            </li>
-            <li style="text-align: justify; text-justify: inter-word;">
-              <b>Podstawy programowania w JAVA</b>
-              dla studentów I roku I stopnia
-            </li>
-            <li style="text-align: justify; text-justify: inter-word;">
-              <b>Web Development</b>
-              - tworzenie prostej aplikacji webowej z wykorzystaniem node.js dla
-              studentów II roku II stopnia
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Three -->
-    <section id="work" class="wrapper">
-      <center>
-        <h2><b>Praca zawodowa</b></h2>
-      </center>
-      <hr />
-      <div class="inner alt">
-        <section class="spotlight">
-          <div style="margin: 30px;"><b>11.2014 – 11.2017</b></div>
-          <div class="content">
-            <b>Sulimo Software</b>
-            <p style="text-align: justify; text-justify: inter-word;">
-              Rozwój portalu napisanego w PHP z wykorzystaniem frameworka YII.
-              Niestety nie wiem jakie były dalsze losy tego projektu, a
-              zajmowałem się nim około jednego roku. Kolejnym wyzwaniem było
-              tworzenie interaktywnych dokumentów z wykorzystaniem XML, XSL i
-              zajmowałem się tym około 2 lata.
-            </p>
-          </div>
-        </section>
-      </div>
-      <br />
-      <div class="inner alt">
-        <section class="spotlight">
-          <div style="margin: 30px;"><b>02.2015 – 10.2022</b></div>
-          <div class="content">
-            <b>Uniwersytet Marii Curie-Skłodowskiej</b>
-            <p style="text-align: justify; text-justify: inter-word;">
-              asystent pracowni modelowania i symulacji komputereowych, a
-              następnie asystent w katedrze neuroinformatyki i inżynierii
-              biomedycznej. Prowadziłem zajęcia ze studentami, a pracę naukową
-              skupiłem na dziedzinie genetyki.
-            </p>
-          </div>
-        </section>
-      </div>
-      <br />
-      <div class="inner alt">
-        <section class="spotlight">
-          <div style="margin: 30px;"><b>04.2021 – 01.2023</b></div>
-          <div class="content">
-            <b>Mindconsulting</b>
-            <p style="text-align: justify; text-justify: inter-word;">
-              Tworzenie aplikacji mobilnej Android/IOS w React Native z
-              wykorzystaniem TypeScript moim głównym zadaniem było: 
-            <ul style="text-align: justify; text-justify: inter-word;">
-              <li >
-                Tworzenie widoków,
-              </li>
-              <li >
-                obsługa płatności,
-              </li>
-              <li >
-                przygotowywanie wersji release i
-              publikacja w sklepie play i na TestFlight,
-              </li>
-              <li >
-                obsługa i tworzenie
-              wykresów w aplikacji mobilnej,
-              </li>
-              <li >
-                komunikacja z API,
-              </li>
-              <li >
-                obsługa
-              wyjątków i kodów błędu z API,
-              </li>
-              <li >
-                testy manualne,
-              </li>
-              <li >
-                praca z lokalną bazą danych i globalnym
-              stanem aplikacji.
-              </li>
-            </ul>        Aplikacja nie jest jeszcze ogólnie dostępna i
-              nie mogę się nią pochwalić.
-            </p>
-          </div>
-        </section>
-      </div>
-    </section>
-
-    <section id="projects" class="wrapper">
-      <center>
-        <h2><b>Projekty autorskie</b></h2>
-      </center>
-      <hr />
-
-      <center>
-        <h3><b>Aplikacja mobilna</b></h3>
-      </center>
-      <hr />
-      <div class="inner alt">
-        <section class="spotlight">
-          <div style="margin: 15px;">
-            <img style="height: 800px;" src="images/7.jpg" alt="" />
-          </div>
-
-          <div class="content" style="height: 100%;">
-            <p style="text-align: justify; text-justify: inter-word;">
-              <b>Aplikacja mobilna</b>
-              napisana w React Native z wykorzystaniem typescript. Aplikacja
-              posiada połączenie z API, zarządzanie globalnym stanem, listy,
-              karuzele, filtrację, zagnieżdżoną nawigację, formularze z
-              walidacją. Aplikacja nie ma aktualnie przeznaczenia, będzie
-              szablonem do napisania autorskich pomysłów.
-            </p>
-            <center>
-              <iframe width="500" height="350" src="https://www.youtube.com/embed/97fNakTlGqU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </center>
-          </div>
-        </section>
-        <center>
-          <h3><b>CMS</b></h3>
-        </center>
-        <section class="spotlight">
-          <div>
-            <center>
-              <img
-                style="max-width: 100%; width: 500px;"
-                src="images/8.jpg"
-                alt=""
-              />
-              <img
-                style="max-width: 100%; width: 500px;"
-                src="images/10.jpg"
-                alt=""
-              />
-            </center>
-          </div>
-          <div class="content">
-            <p style="text-align: justify; text-justify: inter-word;">
-              <b>CMS</b>
-              napisany w React z wykorzystaniem typescript. Aplikacja posiada
-              połączenie z API, zarządzanie globalnym stanem oraz pełne
-              zarządzanie CRUD. Aplikacj zrobiona jest tak aby nowe powiązania z
-              API były banalnie proste do wygenerowania. Lista jest paginowana,
-              a wyświetlane pola zależą od przekazanej tablicy. Komponent
-              obsługi CRUD jest zrobiony generycznie, dlatego wystarczy że dane
-              z api będą miały analogiczny schemat. W na drugim screenie
-              pokazane jest użycie komponentu szablonowego, wystarczy przekazać
-              ścieżkę do api, lokalną ścieżkę oraz kolumny które chce się
-              wyświetlić.
-            </p>
-          </div>
-        </section>
-        <center>
-          <h3><b>API</b></h3>
-        </center>
-        <section class="spotlight">
-          <div>
-            <center>
-              <img
-                style="max-width: 100%; width: 500px;"
-                src="images/9.jpg"
-                alt=""
-              />
-              <img
-                style="max-width: 100%; width: 500px;"
-                src="images/12.jpg"
-                alt=""
-              />
-            </center>
-          </div>
-          <div class="content">
-            <p style="text-align: justify; text-justify: inter-word;">
-              <b>API</b>
-              napisane w NestJS z wykorzystaniem typescript. Aplikacja posiada
-              nierelacyjną bazę danych MongoDB. Crud generowany jest za pomocą
-              jednego polecenia, dostosowanie jest szybkie i mało skomplikowane.
-              Wszystkie endpointy uwzględnione są w automatycznie generowanej
-              dokumentacji.
-            </p>
-          </div>
-        </section>
-        <center>
-          <h3><b>Wyszukiwarka przepisów - PHP (framework YII)</b></h3>
-        </center>
-        <section class="spotlight">
-          <div>
-            <center>
-              <img
-                style="max-width: 100%; width: 500px;"
-                src="images/wte/Home.png"
-                alt=""
-              />
-              <img
-                style="max-width: 100%; width: 500px;"
-                src="images/wte/Role2.png"
-                alt=""
-              />
-            </center>
-          </div>
-          <div class="content">
-            <p style="text-align: justify; text-justify: inter-word;">
-              <b>Wyszukiwarka przepisów</b>
-              napisana w <b>PHP</b> z wykorzystaniem frameworka YII, baza danych <b>SQL</b>. 
-              Jest to serwis z podziałem na role (administrator, moderator, użytkownik).
-              Aplikacja umożliwia dodawanie przepisów które muszą być zatwierdzone przez moderatora.
-              Każdy niezalogowany użytkownik widzi publiczne przepisy i ma możliwość wyszukania po produktach.
-              Każdy produkt przypisany jest do konkretnej grupy produktów. Produkty, grupy, sprzęty AGD, czas przygotowania i wszystkie inne funkcjonalności są zarządzane przez administratora.
-
-           
-            </p>
-          </div>
-        </section>
-        <section class="spotlight">
-        <center>
-          <div class="row">
-            <div class="columnBig">
-              <img src="images/wte/Gallery.png" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+            <div class="char-stats-grid">
+              <div class="char-stat-item">
+                <span class="char-stat-label">REACT NATIVE</span>
+                <span class="char-stat-val">5+ Lat (New Arch)</span>
+              </div>
+              <div class="char-stat-item">
+                <span class="char-stat-label">WEB &amp; BACKEND</span>
+                <span class="char-stat-val">React 19 / NestJS</span>
+              </div>
+              <div class="char-stat-item">
+                <span class="char-stat-label">PRODUKT FLAGOWY</span>
+                <span class="char-stat-val">Plantiano.pl</span>
+              </div>
+              <div class="char-stat-item">
+                <span class="char-stat-label">GAME &amp; AUDIO</span>
+                <span class="char-stat-val">Pixel Games &amp; Spotify</span>
+              </div>
             </div>
           </div>
-      
-          
-          <div id="myModal" class="modal">
-            <span class="close cursor" onclick="closeModal()">&times;</span>
-            <div class="modal-content">
-          
-              <div class="mySlides">
-                <div class="numbertext">1 / 17</div>
-                <img src="images/wte/Home.png" style="width:100%">
-              </div>
-          
-              <div class="mySlides">
-                <div class="numbertext">2 / 17</div>
-                <img src="images/wte/Twoje przepisy1.png" style="width:100%">
-              </div>
-             
-              <div class="mySlides">
-                <div class="numbertext">3 / 17</div>
-                <img src="images/wte/Twoje przepisy2.png" style="width:100%">
-              </div>
-              
-              <div class="mySlides">
-                <div class="numbertext">4 / 17</div>
-                <img src="images/wte/Twoje przepisy3.png" style="width:100%">
-              </div>
-
-              <div class="mySlides">
-                <div class="numbertext">5 / 17</div>
-                <img src="images/wte/AGD1.png" style="width:100%">
-              </div>
-          
-              <div class="mySlides">
-                <div class="numbertext">6 / 17</div>
-                <img src="images/wte/Poziom.png" style="width:100%">
-              </div>
-             
-              <div class="mySlides">
-                <div class="numbertext">7 / 17</div>
-                <img src="images/wte/Produkty1.png" style="width:100%">
-              </div>
-              
-              <div class="mySlides">
-                <div class="numbertext">8 / 17</div>
-                <img src="images/wte/Produkty2.png" style="width:100%">
-              </div>
-
-              <div class="mySlides">
-                <div class="numbertext">9 / 17</div>
-                <img src="images/wte/Produkty3.png" style="width:100%">
-              </div>
-          
-              <div class="mySlides">
-                <div class="numbertext">10 / 17</div>
-                <img src="images/wte/Przepisy moderator2.png" style="width:100%">
-              </div>
-             
-              <div class="mySlides">
-                <div class="numbertext">11 / 17</div>
-                <img src="images/wte/Przepisy moderator3.png" style="width:100%">
-              </div>
-              
-              <div class="mySlides">
-                <div class="numbertext">12 / 17</div>
-                <img src="images/wte/Przepisy1.png" style="width:100%">
-              </div>
-
-              <div class="mySlides">
-                <div class="numbertext">13 / 17</div>
-                <img src="images/wte/Przepisy2.png" style="width:100%">
-              </div>
-          
-              <div class="mySlides">
-                <div class="numbertext">14 / 17</div>
-                <img src="images/wte/Przepisy3.png" style="width:100%">
-              </div>
-             
-              <div class="mySlides">
-                <div class="numbertext">15 / 17</div>
-                <img src="images/wte/Rodzaj.png" style="width:100%">
-              </div>
-              
-              <div class="mySlides">
-                <div class="numbertext">16 / 17</div>
-                <img src="images/wte/Role.png" style="width:100%">
-              </div>
-
-              <div class="mySlides">
-                <div class="numbertext">17 / 17</div>
-                <img src="images/wte/Zarządzanie.png" style="width:100%">
-              </div>
-              
-              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-              <a class="next" onclick="plusSlides(1)">&#10095;</a>
-          
-              <div class="caption-container">
-                <p id="caption"></p>
-              </div>
-          
-          
-              <div class="column">
-                <img class="demo cursor" src="images/wte/Home.png" style="width:100%" onclick="currentSlide(1)" alt="
-                Strona główna zawiera polecane przepisy i polecanego autora dnia">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="images/wte/Twoje przepisy1.png" style="width:100%" onclick="currentSlide(2)" alt="
-                Wyszukiwarka przepisów na podstawie produktów
-                ">
-              </div>
-              
-              <div class="column">
-                <img class="demo cursor" src="images/wte/Twoje przepisy2.png" style="width:100%" onclick="currentSlide(3)" alt="Strona z widokiem użytkownika zalogowanego, są to zaakceptowane przez moderatora dodane przepisy">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="images/wte/Twoje przepisy3.png" style="width:100%" onclick="currentSlide(4)" alt="Strona z odrzuconymi i niesprawdzonymi przez moderatora przepisami">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="images/wte/AGD1.png" style="width:100%" onclick="currentSlide(5)" alt="
-                Lista sprzętów AGD używanych w przepisach. Można obejrzeć, edytować i usuwać
-                ">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="images/wte/Poziom.png" style="width:100%" onclick="currentSlide(6)" alt="
-                Poziomy trudności z pełnym CRUDem
-                ">
-              </div>
-              
-              <div class="column">
-                <img class="demo cursor" src="images/wte/Produkty1.png" style="width:100%" onclick="currentSlide(7)" alt="Lista produktów z przypisanym rodzajem produktu">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="images/wte/Produkty2.png" style="width:100%" onclick="currentSlide(8)" alt="Widok podglądu jednego z produktów, można usunąć i edytować">
-              </div>
-
-
-              <div class="column">
-                <img class="demo cursor" src="images/wte/Produkty3.png" style="width:100%" onclick="currentSlide(9)" alt="
-                Podczas dodawania produktu należy wybrać jego rodzaj
-                ">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="images/wte/Przepisy moderator2.png" style="width:100%" onclick="currentSlide(10)" alt="
-                Widok moderatora która może filtrować statusy, N - oznacza niesprawdzony przepis.
-                ">
-              </div>
-              
-              <div class="column">
-                <img class="demo cursor" src="images/wte/Przepisy moderator3.png" style="width:100%" onclick="currentSlide(11)" alt="Moderator może odrzucić przepis, zaakceptować, aktualizować lub usunąć">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="images/wte/Przepisy1.png" style="width:100%" onclick="currentSlide(12)" alt="Strona dodawania przepisu z walidacją">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="images/wte/Przepisy2.png" style="width:100%" onclick="currentSlide(13)" alt="
-                Wszystkie dropdowny pobierają dane z bazy danych
-                ">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="images/wte/Przepisy3.png" style="width:100%" onclick="currentSlide(14)" alt="
-                multiselect do wyboru produktów
-                ">
-              </div>
-              
-              <div class="column">
-                <img class="demo cursor" src="images/wte/Rodzaj.png" style="width:100%" onclick="currentSlide(15)" alt="Widok rodzaji produków z pełnym CRUDem">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="images/wte/Role.png" style="width:100%" onclick="currentSlide(16)" alt="Role użytkowników">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="images/wte/Zarządzanie.png" style="width:100%" onclick="currentSlide(17)" alt="
-                Dodatkowe funkcje dla administratora">
-              </div
-            </div>
-          </div>
-        </center>
+        </div>
       </section>
+
+      <!-- ===================================================================
+           STAGE 01: O MNIE (CHARACTER LORE & FULLSTACK SKILL TREE)
+           =================================================================== -->
+      <section id="aboutme" class="game-section">
+        <div class="section-banner">
+          <div class="section-title-group">
+            <span class="stage-badge">STAGE 01</span>
+            <h2 class="section-title">O mnie &amp; Stack</h2>
+          </div>
+          <span
+            style="
+              font-family: var(--font-pixel);
+              font-size: 0.55rem;
+              color: var(--accent-cyan);
+            "
+          >
+            [CHARACTER BIO &amp; TECH INVENTORY]
+          </span>
+        </div>
+
+        <div class="about-grid">
+          <div class="pixel-box lore-card">
+            <div class="lore-header">
+              <img
+                src="images/pixel/avatar_suit.jpg"
+                alt="Adam Misiura - portret pixel art"
+                class="lore-thumb pixel-img"
+                data-lightbox-src="images/pixel/avatar_suit.jpg"
+                data-lightbox-caption="Adam Misiura — 16-Bit RPG Dialogue Portrait"
+                style="cursor: pointer"
+              />
+              <div>
+                <h3 class="lore-title">PROFIL DEVELOPERA</h3>
+                <span class="lore-subtitle"
+                  >Senior Web &amp; Mobile Fullstack Developer</span
+                >
+              </div>
+            </div>
+            <p class="lore-text" style="margin-bottom: 1rem">
+              Jestem doświadczonym fullstack developerem aplikacji internetowych
+              i mobilnych z <b>12-letnim stażem w IT</b> (w tym
+              <b>5 lat React Native</b> oraz <b>2 lata NestJS</b>). Specjalizuję
+              się w <b>React, React Native, TypeScript, NestJS</b>. W projektach
+              komercyjnych odpowiadam za pełny cykl: architektura UI/API,
+              integracje, bezpieczeństwo, jakość i wdrożenia produkcyjne.
+            </p>
+            <p class="lore-text">
+              Swoją przygodę zaczynałem od prostych stron w HTML/CSS, przez C,
+              C++, Javę i Pythona na studiach, rozwój systemów w PHP (Yii) i
+              XForms/XML, wieloletnią pracę naukowo-dydaktyczną na uczelni
+              (genetyka i algorytmika), aż po nowoczesne systemy webowe i
+              mobilne oraz autorską platformę ogrodniczą
+              <a
+                href="https://plantiano.pl/"
+                target="_blank"
+                rel="noopener"
+                style="color: var(--accent-cyan)"
+                >Plantiano.pl</a
+              >.
+            </p>
+          </div>
+
+          <div class="pixel-box pixel-box-amber skill-tree-card">
+            <div class="lore-header">
+              <img
+                src="images/pixel/quest_code.jpg"
+                alt="Pixel Art Code Icon"
+                class="lore-thumb pixel-img"
+              />
+              <div>
+                <h3 class="lore-title" style="color: var(--accent-amber)">
+                  GŁÓWNE STATYSTYKI
+                </h3>
+                <span class="lore-subtitle" style="color: var(--accent-cyan)"
+                  >Poziom biegłości w technologiach</span
+                >
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-meta">
+                <span>REACT NATIVE / EXPO (NEW ARCH, HERMES)</span>
+                <span style="color: var(--accent-cyan)">96%</span>
+              </div>
+              <div class="skill-bar-outer">
+                <div class="skill-bar-inner" style="width: 96%"></div>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-meta">
+                <span>REACT 19 / TYPESCRIPT / NEXT.JS / VUE 3</span>
+                <span style="color: var(--accent-cyan)">95%</span>
+              </div>
+              <div class="skill-bar-outer">
+                <div class="skill-bar-inner" style="width: 95%"></div>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-meta">
+                <span>NESTJS / NODE.JS / POSTGRESQL / MONGODB</span>
+                <span style="color: var(--accent-amber)">90%</span>
+              </div>
+              <div class="skill-bar-outer">
+                <div class="skill-bar-inner amber" style="width: 90%"></div>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-meta">
+                <span>ARCHITEKTURA / OFFLINE-FIRST / E2EE / RBAC</span>
+                <span style="color: var(--accent-amber)">90%</span>
+              </div>
+              <div class="skill-bar-outer">
+                <div class="skill-bar-inner amber" style="width: 90%"></div>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-meta">
+                <span>TESTY (PLAYWRIGHT, VITEST, JEST) &amp; CI/CD</span>
+                <span style="color: var(--accent-magenta)">86%</span>
+              </div>
+              <div class="skill-bar-outer">
+                <div class="skill-bar-inner magenta" style="width: 86%"></div>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-meta">
+                <span>KOMPOZYCJA MUZYCZNA &amp; GAME DEV</span>
+                <span style="color: var(--accent-magenta)">100%</span>
+              </div>
+              <div class="skill-bar-outer">
+                <div class="skill-bar-inner magenta" style="width: 100%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rozszerzony ekwipunek technologiczny -->
+        <div class="stack-matrix-grid">
+          <div class="stack-cat-card">
+            <div class="stack-cat-title">
+              <i class="fas fa-desktop"></i> FRONTEND &amp; UI
+            </div>
+            <p class="stack-cat-items">
+              React 19, Next.js, Vue 3, TypeScript, Vite, Redux Toolkit,
+              TanStack Query/Table, MobX, React Hook Form, Zod, Tailwind, Radix,
+              Ant Design, MUI, TipTap, Excalidraw
+            </p>
+          </div>
+
+          <div class="stack-cat-card">
+            <div class="stack-cat-title">
+              <i class="fas fa-mobile-alt"></i> MOBILE (ANDROID / iOS)
+            </div>
+            <p class="stack-cat-items">
+              React Native 0.86 / Expo (New Arch, Hermes), Reanimated, Gesture
+              Handler, Vision Camera (QR), WatermelonDB / SQLite, offline-first
+              sync, FCM / Notifee / OneSignal, EAS Build, Google Play
+            </p>
+          </div>
+
+          <div class="stack-cat-card">
+            <div class="stack-cat-title">
+              <i class="fas fa-server"></i> BACKEND, CLOUD &amp; AI
+            </div>
+            <p class="stack-cat-items">
+              NestJS, Node.js, MikroORM, PostgreSQL, MongoDB, Socket.IO,
+              Swagger, better-auth, Firebase, Google Cloud, Stripe, Cloudinary,
+              Google Maps / OSM, n8n, OpenRouter / Pl@ntNet API
+            </p>
+          </div>
+
+          <div class="stack-cat-card">
+            <div class="stack-cat-title">
+              <i class="fas fa-shield-alt"></i> SECURITY &amp; QUALITY
+            </div>
+            <p class="stack-cat-items">
+              RBAC, JWT refresh queue, E2EE (AES-256-GCM / PBKDF2), Playwright,
+              Vitest, Jest, Testing Library, MSW, Sentry, Docker, GitHub Actions
+              CI/CD
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           STAGE 02: AUTORSKIE PROJEKTY, PLANTIANO & GRY PRZEGLĄDARKOWE
+           =================================================================== -->
+      <section id="projects" class="game-section">
+        <div class="section-banner">
+          <div class="section-title-group">
+            <span class="stage-badge">STAGE 02</span>
+            <h2 class="section-title">Projekty autorskie &amp; Gry</h2>
+          </div>
+          <span
+            style="
+              font-family: var(--font-pixel);
+              font-size: 0.55rem;
+              color: var(--accent-amber);
+            "
+          >
+            [KLIKNIJ ZAGRAJ LUB POWIĘKSZ EKRAN PROJEKTU]
+          </span>
+        </div>
+
+        <!-- FLAGOWY PRODUKT: PLANTIANO.PL -->
+        <article
+          class="pixel-box pixel-box-amber project-card"
+          style="margin-bottom: 2.5rem"
+        >
+          <div class="project-top-bar">
+            <div class="project-title-wrap">
+              <span
+                class="stage-badge"
+                style="background: var(--accent-green); color: #000"
+                >FLAGSHIP PRODUCT</span
+              >
+              <h3 class="project-title">
+                Plantiano — Platforma Ogrodniczo-Społecznościowa
+              </h3>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">React Native 0.86</span>
+              <span class="tech-tag">React 19</span>
+              <span class="tech-tag">NestJS</span>
+              <span class="tech-tag">TanStack Query</span>
+              <span class="tech-tag">AI / Pl@ntNet</span>
+            </div>
+          </div>
+
+          <div class="project-body">
+            <div class="crt-frame">
+              <div class="crt-frame-bar">
+                <div class="crt-dots">
+                  <span class="crt-dot"></span>
+                  <span class="crt-dot"></span>
+                  <span class="crt-dot"></span>
+                </div>
+                <span>PLANTIANO_APP // AKTUALNOŚCI + BAZA</span>
+                <span>[LIVE]</span>
+              </div>
+              <div class="crt-phones">
+                <div
+                  class="crt-screen-viewport phone-tall"
+                  data-lightbox-group="plantiano-app"
+                  data-lightbox-src="images/pixel/plantiano.jpg"
+                  data-lightbox-caption="Plantiano.pl — Aplikacja mobilna, zakładka Aktualności"
+                >
+                  <img
+                    src="images/pixel/plantiano.jpg"
+                    alt="Plantiano.pl — ekran Aktualności w aplikacji mobilnej"
+                  />
+                </div>
+                <div
+                  class="crt-screen-viewport phone-tall"
+                  data-lightbox-group="plantiano-app"
+                  data-lightbox-src="images/pixel/plantiano-knowledge.jpg"
+                  data-lightbox-caption="Plantiano.pl — Aplikacja mobilna, baza wiedzy"
+                >
+                  <img
+                    src="images/pixel/plantiano-knowledge.jpg"
+                    alt="Plantiano.pl — ekran Baza wiedzy w aplikacji mobilnej"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 1.15rem">
+              <p style="text-align: justify">
+                <b>Plantiano</b> (<a
+                  href="https://plantiano.pl/"
+                  target="_blank"
+                  rel="noopener"
+                  style="color: var(--accent-cyan)"
+                  >plantiano.pl</a
+                >) to flagowy produkt komercyjny budowany w całości od zera —
+                rozbudowany ekosystem ogrodniczo-społecznościowy obejmujący
+                aplikację mobilną (React Native 0.86 / New Architecture /
+                Hermes), aplikację webową (React 19), panel CMS oraz backend
+                NestJS (~140 endpointów).
+              </p>
+              <ul class="quest-loot-list" style="margin: 0">
+                <li>Interaktywny edytor i planer grządek (DnD, eksport PDF)</li>
+                <li>Rozpoznawanie roślin AI (Pl@ntNet) + asystent LLM</li>
+                <li>
+                  Offline-first cache bazy wiedzy i ponad 100 zapytań Query
+                </li>
+                <li>Skaner QR (Vision Camera), mapy OSM, pogoda Open-Meteo</li>
+                <li>
+                  Czat i powiadomienia real-time (Socket.IO, FCM, Notifee)
+                </li>
+                <li>Wielojęzyczność (PL / EN / DE) oraz moderacja AI</li>
+              </ul>
+              <div>
+                <a
+                  href="https://plantiano.pl/"
+                  target="_blank"
+                  rel="noopener"
+                  class="pixel-btn pixel-btn-primary"
+                >
+                  <i class="fas fa-external-link-alt"></i> URUCHOM PLANTIANO.PL
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- GRY PRZEGLĄDARKOWE: PIXELWALK & MICROMETROPOLIS -->
+        <div class="games-showcase-grid">
+          <!-- GRA 1: PIXELWALK -->
+          <article class="pixel-box game-cartridge-card">
+            <div>
+              <div
+                class="game-cover-banner"
+                style="cursor: pointer"
+                data-lightbox-src="images/pixelwalk-cover.jpg"
+                data-lightbox-caption="PixelWalk — Gra przeglądarkowa w stylistyce pixel-art"
+              >
+                <span class="game-status-pill">
+                  <i class="fas fa-play"></i> PLAYABLE IN BROWSER
+                </span>
+                <img
+                  src="images/pixelwalk-cover.jpg"
+                  alt="PixelWalk - Gra Pixel Art"
+                />
+              </div>
+              <div class="game-card-heading">
+                <h3 class="project-title" style="color: var(--accent-cyan)">
+                  PixelWalk
+                </h3>
+                <span class="tech-tag">PIXEL-ART GAME</span>
+              </div>
+              <p style="font-size: 0.92rem; color: var(--text-main)">
+                Autorska gra przeglądarkowa utrzymana w klasycznej stylistyce
+                pixel-art. Eksploruj pikselowy świat bezpośrednio w przeglądarce
+                na GitHub Pages!
+              </p>
+            </div>
+            <div>
+              <a
+                href="https://adamgithub2.github.io/pixelwalk/"
+                target="_blank"
+                rel="noopener"
+                class="pixel-btn pixel-btn-primary"
+                style="width: 100%; justify-content: center"
+              >
+                <i class="fas fa-gamepad"></i> ZAGRAJ W PIXELWALK
+              </a>
+            </div>
+          </article>
+
+          <!-- GRA 2: MICROMETROPOLIS -->
+          <article class="pixel-box pixel-box-magenta game-cartridge-card">
+            <div>
+              <div
+                class="game-cover-banner"
+                style="border-color: var(--accent-magenta); cursor: pointer"
+                data-lightbox-src="images/micrometropolis-cover.jpg"
+                data-lightbox-caption="MicroMetropolis — Przeglądarkowa gra typu city-builder"
+              >
+                <span
+                  class="game-status-pill"
+                  style="background: var(--accent-amber)"
+                >
+                  <i class="fas fa-city"></i> CITY BUILDER / SIM
+                </span>
+                <img
+                  src="images/micrometropolis-cover.jpg"
+                  alt="MicroMetropolis - Gra Strategiczna"
+                />
+              </div>
+              <div class="game-card-heading">
+                <h3 class="project-title" style="color: var(--accent-amber)">
+                  MicroMetropolis
+                </h3>
+                <span class="tech-tag">CITY SIMULATOR</span>
+              </div>
+              <p style="font-size: 0.92rem; color: var(--text-main)">
+                Przeglądarkowa gra symulacyjno-strategiczna typu city-builder.
+                Buduj i rozwijaj własną metropolię, zarządzaj infrastrukturą i
+                obserwuj życie miasta!
+              </p>
+            </div>
+            <div>
+              <a
+                href="https://adamgithub2.github.io/micrometropolis/"
+                target="_blank"
+                rel="noopener"
+                class="pixel-btn"
+                style="
+                  width: 100%;
+                  justify-content: center;
+                  border-color: var(--accent-magenta);
+                  color: var(--accent-magenta);
+                "
+              >
+                <i class="fas fa-play-circle"></i> ZAGRAJ W MICROMETROPOLIS
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- DOTYCHCZASOWE PROJEKTY AUTORSKIE (ZACHOWANE SCREENY W RAMKACH CRT) -->
+        <div class="project-showcase">
+          <!-- PROJEKT: CMS -->
+          <article class="pixel-box project-card">
+            <div class="project-top-bar">
+              <div class="project-title-wrap">
+                <span
+                  class="stage-badge"
+                  style="background: var(--accent-amber); color: #000"
+                  >ADMIN PANEL</span
+                >
+                <h3 class="project-title">Plantiano CMS</h3>
+              </div>
+              <div class="tech-tags">
+                <span class="tech-tag">NestJS</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Moderacja</span>
+                <span class="tech-tag">Baza wiedzy</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="screens-duo">
+                <div class="crt-frame">
+                  <div class="crt-frame-bar">
+                    <div class="crt-dots">
+                      <span class="crt-dot"></span>
+                      <span class="crt-dot"></span>
+                      <span class="crt-dot"></span>
+                    </div>
+                    <span>CMS_KNOWLEDGE // zabiegi</span>
+                  </div>
+                  <div
+                    class="crt-screen-viewport"
+                    data-lightbox-group="cms-group"
+                    data-lightbox-src="images/plantiano-cms-knowledge.png"
+                    data-lightbox-caption="Plantiano CMS — rozbudowana baza wiedzy (zabiegi, odmiany, nawozy, szkodniki)"
+                  >
+                    <img
+                      src="images/plantiano-cms-knowledge.png"
+                      alt="Plantiano CMS — baza wiedzy, katalog zabiegów"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+
+                <div class="crt-frame">
+                  <div class="crt-frame-bar">
+                    <div class="crt-dots">
+                      <span class="crt-dot"></span>
+                      <span class="crt-dot"></span>
+                      <span class="crt-dot"></span>
+                    </div>
+                    <span>CMS_POSTS // publikacje</span>
+                  </div>
+                  <div
+                    class="crt-screen-viewport"
+                    data-lightbox-group="cms-group"
+                    data-lightbox-src="images/plantiano-cms-posts.jpg"
+                    data-lightbox-caption="Plantiano CMS — moderacja i zarządzanie postami społeczności"
+                  >
+                    <img
+                      src="images/plantiano-cms-posts.jpg"
+                      alt="Plantiano CMS — publikacje i posty"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <p style="text-align: justify">
+                  <b>Plantiano CMS</b> to pełny panel sterowania platformą —
+                  backend w <b>NestJS</b>. Służy do zarządzania całą aplikacją:
+                  postami, artykułami i użytkownikami, przyjmowania zgłoszeń
+                  oraz banowania kont. Sercem panelu jest bardzo rozbudowana
+                  baza wiedzy (odmiany, zabiegi, nawozy, szkodniki, programy
+                  uprawy i setki powiązanych rekordów), z której korzysta
+                  aplikacja mobilna i web.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJEKT: API -->
+          <article class="pixel-box project-card">
+            <div class="project-top-bar">
+              <div class="project-title-wrap">
+                <span
+                  class="stage-badge"
+                  style="background: var(--accent-magenta)"
+                  >BACKEND</span
+                >
+                <h3 class="project-title">Plantiano Backend</h3>
+              </div>
+              <div class="tech-tags">
+                <span class="tech-tag">NestJS</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Swagger</span>
+                <span class="tech-tag">REST API</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="screens-duo">
+                <div class="crt-frame">
+                  <div class="crt-frame-bar">
+                    <div class="crt-dots">
+                      <span class="crt-dot"></span>
+                      <span class="crt-dot"></span>
+                      <span class="crt-dot"></span>
+                    </div>
+                    <span>SWAGGER // GET /feed</span>
+                  </div>
+                  <div
+                    class="crt-screen-viewport"
+                    data-lightbox-group="api-group"
+                    data-lightbox-src="images/plantiano-api-feed.png"
+                    data-lightbox-caption="Plantiano API — dokumentacja Swagger, endpoint GET /feed"
+                  >
+                    <img
+                      src="images/plantiano-api-feed.png"
+                      alt="Plantiano Backend — Swagger GET /feed"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+
+                <div class="crt-frame">
+                  <div class="crt-frame-bar">
+                    <div class="crt-dots">
+                      <span class="crt-dot"></span>
+                      <span class="crt-dot"></span>
+                      <span class="crt-dot"></span>
+                    </div>
+                    <span>SWAGGER // /treatments</span>
+                  </div>
+                  <div
+                    class="crt-screen-viewport"
+                    data-lightbox-group="api-group"
+                    data-lightbox-src="images/plantiano-api-treatments.png"
+                    data-lightbox-caption="Plantiano API — dokumentacja Swagger, zasób Treatments"
+                  >
+                    <img
+                      src="images/plantiano-api-treatments.png"
+                      alt="Plantiano Backend — Swagger Treatments"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <p style="text-align: justify">
+                  <b>Backend Plantiano</b> napisany w <b>NestJS</b> z pełną
+                  dokumentacją Swagger — każdy endpoint, parametry i modele są
+                  opisane i możliwe do przetestowania z poziomu docs. API
+                  obsługuje feed, bazę wiedzy, zabiegi, użytkowników i resztę
+                  ekosystemu aplikacji mobilnej oraz CMS (~140 endpointów).
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           STAGE 03: PRACA ZAWODOWA (COLLAPSIBLE QUEST LOG)
+           =================================================================== -->
+      <section id="work" class="game-section">
+        <div class="section-banner">
+          <div class="section-title-group">
+            <span
+              class="stage-badge"
+              style="background: var(--accent-green); color: #000"
+              >STAGE 03</span
+            >
+            <h2 class="section-title">Praca zawodowa</h2>
+          </div>
+          <span
+            style="
+              font-family: var(--font-pixel);
+              font-size: 0.55rem;
+              color: var(--accent-green);
+            "
+          >
+            [KLIKNIJ NA MISJĘ ABY ROZWINĄĆ SZCZEGÓŁY]
+          </span>
+        </div>
+
+        <div class="quest-timeline">
+          <!-- Gorillas.dev -->
+          <div class="pixel-box pixel-box-amber quest-node">
+            <div class="quest-header">
+              <div>
+                <h3 class="quest-company">
+                  <i class="fas fa-industry"></i> Gorillas.dev
+                </h3>
+                <span style="color: var(--text-muted); font-size: 0.88rem"
+                  >Fullstack Developer • System zarządzania firmą (automatyka
+                  przemysłowa)</span
+                >
+              </div>
+              <span class="quest-date">09.2025 – obecnie</span>
+            </div>
+
+            <details class="quest-accordion">
+              <summary>
+                <i class="fas fa-caret-right quest-accordion-icon"></i>
+                <span>ROZWIŃ SZCZEGÓŁY MISJI &amp; STACK</span>
+              </summary>
+              <div class="quest-details-body">
+                <ul class="quest-loot-list">
+                  <li>
+                    Frontend React 19 + Vite + TanStack Query/Table + RHF/Zod +
+                    Tailwind/Radix (tabele, DnD, responsywność)
+                  </li>
+                  <li>
+                    Mapy Google Maps + Leaflet/OSM — trasy, customowe markery,
+                    geokodowanie, optymalizacja i filtrowanie tras
+                  </li>
+                  <li>
+                    Backend NestJS + MikroORM + PostgreSQL (Swagger,
+                    better-auth, walidacja Zod, i18n FE/BE, Docker)
+                  </li>
+                  <li>
+                    RBAC: role z różnymi widokami FE oraz blokady dostępu na API
+                  </li>
+                  <li>
+                    Automatyzacja skrzynki (n8n + AI) oraz integracja webhooków
+                    Pipedrive CRM
+                  </li>
+                  <li>
+                    Whiteboard (Excalidraw), edytor TipTap, kalendarz DayPilot
+                  </li>
+                </ul>
+                <div class="quest-stack-footer">
+                  Stack: React 19 · Vite · TanStack Query/Table · NestJS ·
+                  MikroORM · PostgreSQL · better-auth · RBAC · Pipedrive · n8n ·
+                  Leaflet · Excalidraw · TipTap · Zod
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <!-- AI Prompt Lab -->
+          <div class="pixel-box quest-node">
+            <div class="quest-header">
+              <div>
+                <h3 class="quest-company">
+                  <i class="fas fa-robot"></i> AI Prompt Lab
+                </h3>
+                <span style="color: var(--text-muted); font-size: 0.88rem"
+                  >Fullstack Developer • Wtyczka Chrome do zarządzania serwisami
+                  AI</span
+                >
+              </div>
+              <span class="quest-date">03.2025 – 09.2025</span>
+            </div>
+
+            <details class="quest-accordion">
+              <summary>
+                <i class="fas fa-caret-right quest-accordion-icon"></i>
+                <span>ROZWIŃ SZCZEGÓŁY MISJI &amp; STACK</span>
+              </summary>
+              <div class="quest-details-body">
+                <ul class="quest-loot-list">
+                  <li>
+                    Testy E2E (Playwright) pokrywające krytyczne ścieżki
+                    aplikacji
+                  </li>
+                  <li>
+                    Refaktoryzacja architektury Vue 3 — oddzielenie logiki od
+                    widoków
+                  </li>
+                  <li>
+                    Rozwój funkcjonalności UI (Element Plus + Tailwind, i18n)
+                  </li>
+                  <li>Integracja Firebase / Vuefire oraz płatności Stripe</li>
+                </ul>
+                <div class="quest-stack-footer">
+                  Stack: Vue 3 · Vite · CRXJS · Element Plus · Tailwind ·
+                  Firebase · Stripe · Playwright
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <!-- Pyramid Games -->
+          <div class="pixel-box quest-node">
+            <div class="quest-header">
+              <div>
+                <h3 class="quest-company">
+                  <i class="fas fa-plane"></i> Pyramid Games (projekt dla
+                  klienta)
+                </h3>
+                <span style="color: var(--text-muted); font-size: 0.88rem"
+                  >Fullstack Developer • Aplikacja do zarządzania
+                  aeroklubem</span
+                >
+              </div>
+              <span class="quest-date">01.2024 – 05.2024</span>
+            </div>
+
+            <details class="quest-accordion">
+              <summary>
+                <i class="fas fa-caret-right quest-accordion-icon"></i>
+                <span>ROZWIŃ SZCZEGÓŁY MISJI &amp; STACK</span>
+              </summary>
+              <div class="quest-details-body">
+                <ul class="quest-loot-list">
+                  <li>
+                    Rozbudowane tabele i timeline (Ant Design, dnd-kit,
+                    react-calendar-timeline) przy dużej ilości danych
+                  </li>
+                  <li>
+                    Wykresy (Chart.js), edytor rich-text (Quill), eksport
+                    CSV/Excel, Socket.io, i18next
+                  </li>
+                  <li>
+                    Parsery i automatyzacja wymiany złożonych danych między
+                    systemami
+                  </li>
+                  <li>Testy jednostkowe i integracyjne (Vitest + RTL + MSW)</li>
+                </ul>
+                <div class="quest-stack-footer">
+                  Stack: React · Vite · Ant Design · React Query · RHF ·
+                  Socket.io · Chart.js · Vitest · MSW
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <!-- SpeedApp -->
+          <div class="pixel-box quest-node">
+            <div class="quest-header">
+              <div>
+                <h3 class="quest-company">
+                  <i class="fas fa-map-marked-alt"></i> SpeedApp
+                </h3>
+                <span style="color: var(--text-muted); font-size: 0.88rem"
+                  >Frontend / Mobile Developer • Aplikacja mobilna (Expo) +
+                  Panel Admina (Next.js)</span
+                >
+              </div>
+              <span class="quest-date">07.2023 – 12.2023</span>
+            </div>
+
+            <details class="quest-accordion">
+              <summary>
+                <i class="fas fa-caret-right quest-accordion-icon"></i>
+                <span>ROZWIŃ SZCZEGÓŁY MISJI &amp; STACK</span>
+              </summary>
+              <div class="quest-details-body">
+                <ul class="quest-loot-list">
+                  <li>
+                    Aplikacja mobilna Expo + React Navigation; mapy i clustering
+                    (react-native-maps), geolokalizacja i powiadomienia
+                  </li>
+                  <li>
+                    Zarządzanie stanem: Redux Toolkit + TanStack Query,
+                    formularze RHF + Yup, i18next, Sentry, Firebase Analytics
+                  </li>
+                  <li>
+                    Panel administracyjny: Next.js + MUI + NextAuth, testy UI
+                    (RTL/Jest), mocki API (MirageJS), EAS Build
+                  </li>
+                </ul>
+                <div class="quest-stack-footer">
+                  Stack: Expo · React Native · Next.js · MUI · Redux Toolkit ·
+                  TanStack Query · RHF · Maps · Sentry · MirageJS
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <!-- Madmind / Mindconsulting (Kettlo) -->
+          <div class="pixel-box quest-node">
+            <div class="quest-header">
+              <div>
+                <h3 class="quest-company">
+                  <i class="fas fa-dumbbell"></i> Madmind / Mindconsulting
+                  (Kettlo)
+                </h3>
+                <span style="color: var(--text-muted); font-size: 0.88rem"
+                  >Mobile Developer (React Native) • Aplikacja fitness do
+                  planowania treningów</span
+                >
+              </div>
+              <span class="quest-date">04.2021 – 01.2023</span>
+            </div>
+
+            <details class="quest-accordion">
+              <summary>
+                <i class="fas fa-caret-right quest-accordion-icon"></i>
+                <span>ROZWIŃ SZCZEGÓŁY MISJI &amp; STACK</span>
+              </summary>
+              <div class="quest-details-body">
+                <ul class="quest-loot-list">
+                  <li>
+                    Tworzenie widoków w React Native + TypeScript + MobX oraz
+                    praca z lokalną bazą danych WatermelonDB
+                  </li>
+                  <li>
+                    Obsługa płatności, logowania społecznościowego (Apple /
+                    Google / Facebook) oraz powiadomień OneSignal
+                  </li>
+                  <li>
+                    Wykresy SVG, customowy odtwarzacz video (Vimeo / FFmpeg),
+                    obsługa kamery i kodów QR
+                  </li>
+                  <li>
+                    Przygotowywanie wersji release i publikacja w Google Play i
+                    TestFlight, monitoring błędów Sentry
+                  </li>
+                </ul>
+                <div class="quest-stack-footer">
+                  Stack: React Native · TypeScript · MobX · WatermelonDB ·
+                  OneSignal · Sentry · Video / FFmpeg
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <!-- UMCS -->
+          <div class="pixel-box quest-node">
+            <div class="quest-header">
+              <div>
+                <h3 class="quest-company">
+                  <i class="fas fa-university"></i> Uniwersytet Marii
+                  Curie-Skłodowskiej w Lublinie
+                </h3>
+                <span style="color: var(--text-muted); font-size: 0.88rem"
+                  >Asystent / Wykładowca akademicki</span
+                >
+              </div>
+              <span class="quest-date">02.2015 – 10.2022</span>
+            </div>
+
+            <details class="quest-accordion">
+              <summary>
+                <i class="fas fa-caret-right quest-accordion-icon"></i>
+                <span>ROZWIŃ SZCZEGÓŁY MISJI</span>
+              </summary>
+              <div class="quest-details-body">
+                <p>
+                  Asystent pracowni modelowania i symulacji komputerowych, a
+                  następnie asystent w katedrze neuroinformatyki i inżynierii
+                  biomedycznej. Prowadzenie zajęć ze studentami (m.in.
+                  algorytmika, C/C++, Java, Git/Mercurial, matematyka dyskretna,
+                  teoria obliczalności, Node.js) oraz praca naukowa w dziedzinie
+                  genetyki i symulacji subpopulacji.
+                </p>
+              </div>
+            </details>
+          </div>
+
+          <!-- Sulimo Software -->
+          <div class="pixel-box quest-node">
+            <div class="quest-header">
+              <div>
+                <h3 class="quest-company">
+                  <i class="fas fa-code"></i> Sulimo Software
+                </h3>
+                <span style="color: var(--text-muted); font-size: 0.88rem"
+                  >Fullstack Web Developer</span
+                >
+              </div>
+              <span class="quest-date">11.2014 – 11.2017</span>
+            </div>
+
+            <details class="quest-accordion">
+              <summary>
+                <i class="fas fa-caret-right quest-accordion-icon"></i>
+                <span>ROZWIŃ SZCZEGÓŁY MISJI &amp; STACK</span>
+              </summary>
+              <div class="quest-details-body">
+                <p>
+                  Rozwój portalu oraz aplikacji do fakturowania i zarządzania
+                  dokumentami w PHP z wykorzystaniem frameworka YII (~1 rok).
+                  Następnie przez około 2 lata tworzenie elektronicznych
+                  interaktywnych dokumentów z wykorzystaniem technologii XML,
+                  XSL oraz XForms.
+                </p>
+                <div class="quest-stack-footer">
+                  Stack: PHP · Yii Framework · XForms · XML · XSL
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           STAGE 04: PRACA NAUKOWA (ACADEMIC CODEX)
+           =================================================================== -->
+      <section id="academic" class="game-section">
+        <div class="section-banner">
+          <div class="section-title-group">
+            <span class="stage-badge" style="background: var(--accent-purple)"
+              >STAGE 04</span
+            >
+            <h2 class="section-title">Praca naukowa</h2>
+          </div>
+          <span
+            style="
+              font-family: var(--font-pixel);
+              font-size: 0.55rem;
+              color: var(--accent-purple);
+            "
+          >
+            [RESEARCH &amp; UNIVERSITY TEACHING]
+          </span>
+        </div>
+
+        <div class="academic-grid">
+          <div class="pixel-box codex-banner">
+            <img
+              src="images/pixel/quest_science.jpg"
+              alt="Pixel DNA & Algorithms"
+              class="codex-art pixel-img"
+            />
+            <div>
+              <h3
+                style="
+                  font-family: var(--font-pixel);
+                  font-size: 0.9rem;
+                  color: var(--accent-cyan);
+                  margin-bottom: 0.65rem;
+                "
+              >
+                ARTYKUŁY NAUKOWE &amp; DYDAKTYKA AKADEMICKA
+              </h3>
+              <p style="color: var(--text-muted); font-size: 0.92rem">
+                Badania naukowe skoncentrowane na modelowaniu mutacji DNA,
+                symulacjach komputerowych zachowań subpopulacji oraz wieloletnie
+                prowadzenie zajęć ze studentów informatyki na UMCS.
+              </p>
+            </div>
+          </div>
+
+          <!-- Publikacje -->
+          <div class="papers-grid">
+            <article class="pixel-box paper-card">
+              <div>
+                <span class="paper-type"
+                  ><i class="fas fa-dna"></i> PUBLIKACJA NAUKOWA #01</span
+                >
+                <h3 class="paper-title" style="margin: 0.5rem 0">
+                  On the mutation model used in the fingerprinting DNA
+                </h3>
+                <p class="paper-authors">
+                  Andrzej Krajka, Ireneusz Panasiuk, <b>Adam Misiura</b>,
+                  Grzegorz M. Wójcik
+                </p>
+              </div>
+              <div>
+                <a
+                  href="https://www.degruyter.com/document/doi/10.1515/bams-2020-0057/html"
+                  target="_blank"
+                  rel="noopener"
+                  class="pixel-btn"
+                >
+                  <i class="fas fa-external-link-alt"></i> LINK DO ARTYKUŁU
+                </a>
+              </div>
+            </article>
+
+            <article class="pixel-box paper-card">
+              <div>
+                <span class="paper-type"
+                  ><i class="fas fa-microchip"></i> PUBLIKACJA NAUKOWA #02
+                  (IEEE)</span
+                >
+                <h3 class="paper-title" style="margin: 0.5rem 0">
+                  Simulation of the south-eastern Polish subpopulations
+                  behaviour
+                </h3>
+                <p class="paper-authors">
+                  Tomasz Krajka, <b>Adam Misiura</b>, Grzegorz M. Wójcik
+                </p>
+              </div>
+              <div>
+                <a
+                  href="https://ieeexplore.ieee.org/document/9277707"
+                  target="_blank"
+                  rel="noopener"
+                  class="pixel-btn"
+                >
+                  <i class="fas fa-external-link-alt"></i> LINK DO ARTYKUŁU
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Prowadzone zajęcia -->
+          <div class="pixel-box courses-box">
+            <h3 class="courses-title">
+              <i class="fas fa-graduation-cap"></i> PROWADZONE ZAJĘCIA (8
+              PRZEDMIOTÓW AKADEMICKICH)
+            </h3>
+
+            <div class="courses-grid">
+              <div class="course-item">
+                <strong class="course-name">Podstawy programowania w C</strong>
+                <span class="course-target"
+                  >dla studentów I roku I stopnia</span
+                >
+              </div>
+
+              <div class="course-item">
+                <strong class="course-name"
+                  >Programowanie obiektowe w C++</strong
+                >
+                <span class="course-target"
+                  >dla studentów I roku II stopnia</span
+                >
+              </div>
+
+              <div class="course-item">
+                <strong class="course-name">Algorytmika</strong>
+                <span class="course-target"
+                  >dla studentów I roku II stopnia</span
+                >
+              </div>
+
+              <div class="course-item">
+                <strong class="course-name"
+                  >Systemy zarządzania wersją - GIT i Mercurial</strong
+                >
+                <span class="course-target"
+                  >dla studentów I roku I stopnia</span
+                >
+              </div>
+
+              <div class="course-item">
+                <strong class="course-name">Matematyka dyskretna</strong>
+                <span class="course-target"
+                  >dla studentów I roku I stopnia</span
+                >
+              </div>
+
+              <div class="course-item">
+                <strong class="course-name"
+                  >Wstęp do teorii obliczalności</strong
+                >
+                <span class="course-target"
+                  >dla studentów II roku I stopnia</span
+                >
+              </div>
+
+              <div class="course-item">
+                <strong class="course-name"
+                  >Podstawy programowania w JAVA</strong
+                >
+                <span class="course-target"
+                  >dla studentów I roku I stopnia</span
+                >
+              </div>
+
+              <div class="course-item">
+                <strong class="course-name">Web Development</strong>
+                <span class="course-target"
+                  >dla studentów II roku II stopnia</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           STAGE 05: PRACA ARTYSTYCZNA (8-BIT SOUNDTEST, SPOTIFY & BANDS)
+           =================================================================== -->
+      <section id="artistic" class="game-section">
+        <div class="section-banner">
+          <div class="section-title-group">
+            <span class="stage-badge" style="background: var(--accent-magenta)"
+              >STAGE 05</span
+            >
+            <h2 class="section-title">Praca artystyczna</h2>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.75rem">
+            <div class="eq-bars" aria-hidden="true">
+              <span class="eq-bar"></span>
+              <span class="eq-bar"></span>
+              <span class="eq-bar"></span>
+              <span class="eq-bar"></span>
+            </div>
+            <span
+              style="
+                font-family: var(--font-pixel);
+                font-size: 0.55rem;
+                color: var(--accent-magenta);
+              "
+            >
+              [SOUNDTEST ROOM • SPOTIFY &amp; YOUTUBE]
+            </span>
+          </div>
+        </div>
+
+        <div class="pixel-box codex-banner" style="margin-bottom: 2rem">
+          <img
+            src="images/pixel/quest_music.jpg"
+            alt="Pixel Art Music Studio"
+            class="codex-art pixel-img"
+            style="border-color: var(--accent-magenta)"
+          />
+          <div>
+            <h3
+              style="
+                font-family: var(--font-pixel);
+                font-size: 0.9rem;
+                color: var(--accent-amber);
+                margin-bottom: 0.65rem;
+              "
+            >
+              MUZYKA • ZESPOŁY • AUTORSKIE KOMPOZYCJE NA SPOTIFY
+            </h3>
+            <p
+              style="
+                color: var(--text-muted);
+                font-size: 0.92rem;
+                margin-bottom: 1rem;
+              "
+            >
+              Poza programowaniem od ponad dekady tworzę muzykę, gram koncerty i
+              komponuję utwory w klimatach pop/rock, hard rock oraz muzyki
+              filmowej. Posłuchaj bezpośrednio na Spotify!
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.75rem">
+              <a
+                href="https://open.spotify.com/artist/2VuY4VmNL6UiBNb0xdDrcR"
+                target="_blank"
+                rel="noopener"
+                class="social-pixel-btn spotify-btn"
+              >
+                <i class="fab fa-spotify"></i> MOJE UTWORY NA SPOTIFY
+              </a>
+              <a
+                href="https://open.spotify.com/artist/5yc4Y8RvenkSq0EUGNsHG0"
+                target="_blank"
+                rel="noopener"
+                class="social-pixel-btn spotify-btn"
+              >
+                <i class="fab fa-spotify"></i> mPROJEKT NA SPOTIFY
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="music-grid">
+          <!-- mProjekt -->
+          <article class="pixel-box pixel-box-magenta band-card">
+            <div>
+              <div class="band-cover-wrap">
+                <span class="band-genre-tag">POP / ROCK</span>
+                <img src="images/mprojekt.png" alt="mProjekt" loading="lazy" />
+              </div>
+              <h3 class="band-name">mProjekt</h3>
+              <p class="band-desc">
+                <b>mProjekt</b> to Zespół w którym gram ponad 10 lat, tworzymy
+                muzykę w gatunku pop/rock, mamy na koncie dziesiątki teledysków,
+                koncertów i utworów, niedawno wydaliśmy płytę.
+              </p>
+            </div>
+            <div class="social-links-row">
+              <a
+                href="https://open.spotify.com/artist/5yc4Y8RvenkSq0EUGNsHG0"
+                target="_blank"
+                rel="noopener"
+                class="social-pixel-btn spotify-btn"
+              >
+                <i class="fab fa-spotify"></i> Spotify
+              </a>
+              <a
+                href="https://www.youtube.com/@zespolmprojekt/videos"
+                target="_blank"
+                rel="noopener"
+                class="social-pixel-btn"
+              >
+                <i class="fab fa-youtube"></i> YouTube
+              </a>
+              <a
+                href="https://www.facebook.com/zespolmprojekt"
+                target="_blank"
+                rel="noopener"
+                class="social-pixel-btn"
+              >
+                <i class="fab fa-facebook-f"></i> Facebook
+              </a>
+              <a
+                href="https://www.instagram.com/mateuszmiklasz_zespolmprojekt/"
+                target="_blank"
+                rel="noopener"
+                class="social-pixel-btn"
+              >
+                <i class="fab fa-instagram"></i> Instagram
+              </a>
+            </div>
+          </article>
+
+          <!-- Sunrise Symphony / Autorskie utwory -->
+          <article class="pixel-box band-card">
+            <div>
+              <div class="band-cover-wrap">
+                <span
+                  class="band-genre-tag"
+                  style="background: var(--accent-purple)"
+                  >FILM MUSIC</span
+                >
+                <img
+                  src="images/sunriseSymphony.png"
+                  alt="Sunrise Symphony"
+                  loading="lazy"
+                />
+              </div>
+              <h3 class="band-name">Sunrise Symphony / Autorskie Utwory</h3>
+              <p class="band-desc">
+                <b>Sunrise Symphony</b> to mój autorski projekt muzyczny, w
+                którym komponuję muzykę filmową oraz instrumentalne utwory
+                autorskie.
+              </p>
+            </div>
+            <div class="social-links-row">
+              <a
+                href="https://soundcloud.com/sunrisesymphony"
+                target="_blank"
+                rel="noopener"
+                class="social-pixel-btn"
+              >
+                <i class="fab fa-soundcloud"></i> SoundCloud
+              </a>
+              <a
+                href="https://www.facebook.com/Sunrise-Symphony-Film-Music-107476263937744"
+                target="_blank"
+                rel="noopener"
+                class="social-pixel-btn"
+              >
+                <i class="fab fa-facebook-f"></i> Facebook
+              </a>
+            </div>
+          </article>
+
+          <!-- Oversight -->
+          <article class="pixel-box pixel-box-amber band-card">
+            <div>
+              <div class="band-cover-wrap">
+                <span
+                  class="band-genre-tag"
+                  style="background: var(--accent-amber); color: #000"
+                  >HARD ROCK</span
+                >
+                <img
+                  src="images/oversight.jpg"
+                  alt="Oversight"
+                  loading="lazy"
+                />
+              </div>
+              <h3 class="band-name">Oversight</h3>
+              <p class="band-desc">
+                <b>Oversight</b> to zespół z którym zagrałem dziesiątki
+                koncertów, stworzyliśmy wiele autorskich utworów. Gatunek muzyki
+                w jakim tworzyliśmy to rock/hard rock.
+              </p>
+            </div>
+            <div class="social-links-row">
+              <a
+                href="https://www.youtube.com/@PonadWzrokiem/videos"
+                target="_blank"
+                rel="noopener"
+                class="social-pixel-btn"
+              >
+                <i class="fab fa-youtube"></i> YouTube
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           STAGE 06: BONUS ARCADE MINI-GAME (FLAPPY PIXEL)
+           =================================================================== -->
+      <section id="arcade" class="game-section">
+        <div class="section-banner">
+          <div class="section-title-group">
+            <span
+              class="stage-badge"
+              style="background: var(--accent-amber); color: #000"
+              >BONUS STAGE</span
+            >
+            <h2 class="section-title">Mini-Gra: Flappy Pixel</h2>
+          </div>
+          <span
+            style="
+              font-family: var(--font-pixel);
+              font-size: 0.55rem;
+              color: var(--accent-cyan);
+            "
+          >
+            [KLIKNIJ LUB SPACJA ABY LATAĆ]
+          </span>
+        </div>
+
+        <div class="pixel-box arcade-cabinet">
+          <div class="arcade-hud">
+            <div>
+              <span style="color: var(--text-muted)">SCORE:</span>
+              <span id="arcade-score" style="color: var(--accent-amber)"
+                >00000</span
+              >
+            </div>
+            <div class="arcade-champ" id="arcade-champ">
+              MISTRZ:
+              <span id="arcade-champ-name">---</span>
+              <span id="arcade-best">00000</span>
+            </div>
+            <button type="button" id="arcade-reset-btn" class="pixel-btn-sm">
+              <i class="fas fa-redo"></i> RESET
+            </button>
+          </div>
+
+          <div class="arcade-canvas-wrap">
+            <canvas
+              id="arcade-canvas"
+              width="720"
+              height="420"
+              aria-label="Flappy Pixel — kliknij lub naciśnij spację, aby latać"
+            ></canvas>
+            <form id="arcade-record-form" class="arcade-record-form" hidden>
+              <p class="arcade-record-title">NOWY REKORD!</p>
+              <label for="arcade-name-input">WPISZ IMIĘ MISTRZA</label>
+              <input
+                id="arcade-name-input"
+                type="text"
+                maxlength="12"
+                autocomplete="off"
+                spellcheck="false"
+                placeholder="NICK"
+              />
+              <button type="submit" class="pixel-btn-sm">ZAPISZ</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =====================================================================
+         UNIVERSAL PIXEL LIGHTBOX MODAL (Keyboard Arrows & Esc supported)
+         ===================================================================== -->
+    <div
+      id="pixel-lightbox"
+      class="pixel-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Podgląd zrzutu ekranu"
+    >
+      <div class="pixel-modal-dialog">
+        <div class="pixel-modal-header">
+          <span id="lightbox-counter">SCREEN 1 / 17</span>
+          <span>PIXEL_CRT_VIEWER.EXE</span>
+          <button
+            type="button"
+            id="lightbox-close"
+            class="pixel-modal-close"
+            title="Zamknij (Esc)"
+          >
+            X [ESC]
+          </button>
+        </div>
+        <div class="pixel-modal-body">
+          <button
+            type="button"
+            id="lightbox-prev"
+            class="modal-nav-btn modal-nav-prev"
+            title="Poprzedni (Strzałka w lewo)"
+          >
+            &#10094;
+          </button>
+          <img id="lightbox-img" src="" alt="Podgląd" />
+          <button
+            type="button"
+            id="lightbox-next"
+            class="modal-nav-btn modal-nav-next"
+            title="Następny (Strzałka w prawo)"
+          >
+            &#10095;
+          </button>
+        </div>
+        <div id="lightbox-caption" class="pixel-modal-caption"></div>
       </div>
-    </section>
-   
-	<section id="artistic" class="wrapper">
-		<center>
-		  <h2><b>Praca artystyczna</b></h2>
-		</center>
-	</section>
+    </div>
 
-
-	  <section class="wrapper">
-		<div class="inner alt">
-			<section class="spotlight">
-				<div class="image"><img src="images/mprojekt.png" alt="" /></div>
-				<div class="content">
-					<h3>mProjekt</h3>
-          <p style="text-align: justify; text-justify: inter-word;">
-					<b>mProjekt</b> to Zespół w którym gram ponad 10 lat, tworzymy muzykę w gatunku pop/rock, mamy na koncie dziesiątki teledysków, koncertów i utworów, niedawno wydaliśmy płytę.	
-        </p>
-          <ul class="icons" style="margin-top: 15px">
-						<li><a href="https://www.facebook.com/zespolmprojekt" target="_blank" class="icon brands fa-facebook-f" style="font-size:48px;color:rgb(63, 63, 63)"><span class="label">Facebook</span></a></li>	
-						<li><a href="https://www.instagram.com/mateuszmiklasz_zespolmprojekt/" target="_blank" class="icon brands fa-instagram" style="font-size:48px;color:rgb(63, 63, 63)"><span class="label">Instagram</span></a></li>
-						<li><a href="https://www.youtube.com/@zespolmprojekt/videos" target="_blank" class="icon brands fa-youtube" style="font-size:48px;color:rgb(63, 63, 63)"><span class="label">youtube</span></a></li>
-					</ul>
-				</div>
-				
-			</section>
-			<section class="spotlight">
-				<div class="image"><img src="images/sunriseSymphony.png" alt="" /></div>
-				<div class="content">
-					<h3>Sunrise Symphony</h3>
-          <p style="text-align: justify; text-justify: inter-word;">
-					<b>Sunrise Symphony</b> to projekt w którym komponuję muzykę filmową. 
-        </p>
-					<ul class="icons" style="margin-top: 15px">
-						<li><a href="https://www.facebook.com/Sunrise-Symphony-Film-Music-107476263937744" target="_blank" class="icon brands fa-facebook-f" style="font-size:48px;color:rgb(63, 63, 63)"><span class="label">Facebook</span></a></li>	
-						<li><a href="https://soundcloud.com/sunrisesymphony" class="icon brands fa-soundcloud" target="_blank" style="font-size:48px;color:rgb(63, 63, 63)"><span class="label">Soundcloud</span></a></li>
-						<li><a href="https://www.facebook.com/Sunrise-Symphony-Film-Music-107476263937744" target="_blank" class="icon brands fa-youtube" style="font-size:48px;color:rgb(63, 63, 63)"><span class="label">youtube</span></a></li>
-					</ul>
-				</div>
-				
-			</section>
-			<section class="spotlight">
-				<div class="image"><img src="images/oversight.jpg" alt="" /></div>
-				<div class="content">
-					<h3>Oversight</h3>
-          <p style="text-align: justify; text-justify: inter-word;">
-					<b>Oversight</b> to zespół z którym zagrałem dziesiątki koncertów, stworzyliśmy wiele autorskich utworów. Gatunek muzyki w jakim tworzyliśmy to rock/hard rock 
-        </p>
-          <ul class="icons" style="margin-top: 15px">
-						<li><a href="https://www.facebook.com/nobodyisbornbad" target="_blank" class="icon brands fa-facebook-f" style="font-size:48px;color:rgb(63, 63, 63)"><span class="label">Facebook</span></a></li>	
-						<li><a href="https://www.youtube.com/@PonadWzrokiem/videos" target="_blank" class="icon brands fa-youtube" style="font-size:48px;color:rgb(63, 63, 63)"><span class="label">youtube</span></a></li>
-					</ul>
-				</div>
-				
-			</section>
-			<section class="spotlight">
-				<div class="image"><img src="images/islandofillusion.png" alt="" /></div>
-				<div class="content">
-					<h3>The Island of Illusion</h3>
-          <p style="text-align: justify; text-justify: inter-word;">
-					<b>The Island of Illusion</b> to projekt w którym tworzę muzykę z gatunku post rock. 
-        </p>
-					<ul class="icons" style="margin-top: 15px">
-						<li><a href="https://www.youtube.com/@theislandofillusion-postro3350" target="_blank" class="icon brands fa-youtube" style="font-size:48px;color:rgb(63, 63, 63)"><span class="label">youtube</span></a></li>
-					</ul>
-				</div>
-				
-			</section>
-		</div>
-	</section>
-	
-		<!-- Footer -->
-    <footer id="footer">
-		<ul class="icons">
-			<li><a href="https://www.linkedin.com/in/adam-misiura/" target="_blank" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
-		</ul>
-      <p class="copyright">
-        based on free template:
-        <a href="http://html5up.net">HTML5 UP</a>
-      </p>
+    <!-- =====================================================================
+         FOOTER
+         ===================================================================== -->
+    <footer class="pixel-footer">
+      <div class="footer-inner">
+        <div
+          style="
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+          "
+        >
+          <a
+            href="https://www.linkedin.com/in/adam-misiura/"
+            target="_blank"
+            rel="noopener"
+            class="pixel-btn pixel-btn-primary"
+          >
+            <i class="fab fa-linkedin"></i> LINKEDIN
+          </a>
+          <a
+            href="https://plantiano.pl/"
+            target="_blank"
+            rel="noopener"
+            class="pixel-btn"
+          >
+            <i class="fas fa-seedling"></i> PLANTIANO.PL
+          </a>
+          <a
+            href="https://open.spotify.com/artist/2VuY4VmNL6UiBNb0xdDrcR"
+            target="_blank"
+            rel="noopener"
+            class="pixel-btn"
+          >
+            <i class="fab fa-spotify"></i> SPOTIFY
+          </a>
+        </div>
+        <div class="footer-credits">
+          <p>&copy; ADAM MISIURA • PIXEL-ART RETRO RPG EDITION</p>
+          <p style="margin-top: 0.35rem; color: #64748b">
+            100% STATIC HTML5 / CSS3 / CANVAS — READY FOR GITHUB PAGES
+          </p>
+        </div>
+      </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+    <!-- Pure Vanilla JS Pixel Engine -->
+    <script src="assets/js/pixel.js"></script>
   </body>
 </html>
